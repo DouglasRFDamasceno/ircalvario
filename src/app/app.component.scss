@@ -20,6 +20,7 @@ ion-menu.md ion-note {
 ion-menu.md ion-list-header,
 ion-menu.md ion-note {
   padding-left: 10px;
+  margin-bottom: 2rem;
 }
 
 ion-menu.md ion-list#inbox-list {
@@ -116,4 +117,18 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+.menu-header-icon {
+  font-size: 28px;
+  color: var(--ion-color-primary);
+}
+
+.menu-header-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu-list-header {
+  margin-bottom: 20px; /* Espaço abaixo do header */
 }

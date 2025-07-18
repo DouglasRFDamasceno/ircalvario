@@ -1,0 +1,7 @@
+{
+  "name": "ircalvario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,13 +1,122 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <div id="logo">
+        <img src="assets/imgs/backend.png" alt="Logo da aplicação" />
+      </div>
+    </div>
+
+    <p class="header-title">Bem-vindo!</p>
+    <p class="header-subtitle">Registre-se para continuar</p>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Nome" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <!-- Campo visível -->
+        <ion-item button detail="false" (click)="abrirCalendario()" data-nascimento class="data-nascimento-item">
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          <ion-label position="stacked">Data de nascimento</ion-label>
+          <ion-text color="medium">
+            {{ dataNascimentoFormatada || '' }}
+          </ion-text>
+        </ion-item>
+
+        <!-- Modal com calendário -->
+        <ion-modal [isOpen]="mostrarCalendario" (didDismiss)="fecharCalendario()" cssClass="calendario-modal">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar color="primary">
+                <ion-title>Selecione uma data</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button color="light" (click)="fecharCalendario()">Fechar</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+              <ion-datetime
+                presentation="date"
+                [(ngModel)]="dataNascimento"
+                (ionChange)="atualizarData($event)"
+                show-default-buttons="true"
+                done-text="Selecionar"
+                cancel-text="Cancelar"
+                class="calendario-datetime"
+              ></ion-datetime>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+        <ion-item>
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Rua" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Número" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="document-text-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Complemento" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="business-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Bairro" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Cidade" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="flag-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="Estado" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="mail-open-outline" slot="start"></ion-icon>
+          <ion-input type="text" label="CEP" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-input type="email" label="E-mail" label-placement="stacked" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="lock-closed" slot="start"></ion-icon>
+          <ion-input type="password" label="Senha" label-placement="stacked">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="lock-closed" slot="start"></ion-icon>
+          <ion-input type="password" label="Confirmar senha" label-placement="stacked">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+
+        <ion-button expand="block" aria-label="Entrar">Registrar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

@@ -1,5 +1,15 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --background: transparent !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+ion-menu.md ion-content,
+ion-menu.ios ion-content {
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
 }
 
 ion-menu.md ion-content {
@@ -119,16 +129,47 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 
-.menu-header-icon {
-  font-size: 28px;
-  color: var(--ion-color-primary);
+ion-list-header.menu-list-header {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .menu-header-text {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+  display: block;
+  margin: 0 auto;
+  max-width: none; /* ou aumente, ex: 300px */
+  text-align: center;
+  padding: 0 1rem; /* espaçamento horizontal, opcional */
 }
 
-.menu-list-header {
-  margin-bottom: 20px; /* Espaço abaixo do header */
+ion-menu ion-list {
+  padding-top: 0 !important;
 }
+
+/* Seus estilos para os elementos internos */
+.menu-header-icon {
+  font-size: 36px;
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+}
+

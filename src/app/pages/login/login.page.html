@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <h2 class="header-title">Bem-vindo!</h2>
+    <p class="header-title">Bem-vindo!</p>
     <p class="header-subtitle">Entre para continuar</p>
   </div>
 
@@ -24,23 +24,24 @@
       <ion-card-content>
         <ion-item>
           <ion-icon name="mail" slot="start"></ion-icon>
-          <ion-input type="email" label="E-mail" label-placement="floating" aria-label="Digite seu e-mail"></ion-input>
+          <ion-input type="email" label="E-mail" label-placement="stacked" [clearInput]="true"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-icon name="lock-closed" slot="start"></ion-icon>
-          <ion-input type="password" label="Senha" label-placement="floating" aria-label="Digite sua senha">
+          <ion-input type="password" label="Senha" label-placement="stacked">
             <ion-input-password-toggle slot="end"></ion-input-password-toggle>
           </ion-input>
         </ion-item>
 
         <ion-button expand="block" aria-label="Entrar">Entrar</ion-button>
+        <ion-button expand="block" color="medium" aria-label="Registrar" [routerLink]="['/register']">Registrar</ion-button>
       </ion-card-content>
     </ion-card>
 
     <div class="line-text">
       <span class="lines"></span>
-      <span class="text">ou entre com</span>
+      <span class="text">Redes sociais</span>
     </div>
 
     <ion-card class="social-wrapper">

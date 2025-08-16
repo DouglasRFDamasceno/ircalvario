@@ -1,25 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div id="header">
+  <section id="header">
     <div id="app-bar">
       <div id="logo">
-        <img src="assets/imgs/backend.png" alt="Logo da aplicação" />
+        <img src="assets/imgs/logo.png" alt="Logo da aplicação" />
       </div>
     </div>
+  </section>
 
-    <p class="header-title">Bem-vindo!</p>
-    <p class="header-subtitle">Entre para continuar</p>
-  </div>
-
-  <div class="wrapper">
+  <section class="wrapper">
     <ion-card class="form-wrapper">
       <ion-card-content>
         <ion-item>
@@ -30,11 +18,11 @@
         <ion-item>
           <ion-icon name="lock-closed" slot="start"></ion-icon>
           <ion-input type="password" label="Senha" label-placement="stacked">
-            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            <ion-input-password-toggle color="secondary" slot="end"></ion-input-password-toggle>
           </ion-input>
         </ion-item>
 
-        <ion-button expand="block" aria-label="Entrar">Entrar</ion-button>
+        <ion-button expand="block" color="secondary" aria-label="Entrar" (click)="teste()">Entrar</ion-button>
         <ion-button expand="block" color="medium" aria-label="Registrar" [routerLink]="['/register']">Registrar</ion-button>
       </ion-card-content>
     </ion-card>
@@ -47,20 +35,20 @@
     <ion-card class="social-wrapper">
       <ion-card-content>
         <div class="socials">
-          <ion-button class="btn-fb" aria-label="Entrar com Facebook">
+          <ion-button class="btn-fb" aria-label="Entrar com Facebook" (click)="openFacebook()">
             <ion-icon name="logo-facebook"></ion-icon>
           </ion-button>
           <ion-button class="btn-tw" aria-label="Entrar com Twitter">
             <ion-icon name="logo-twitter"></ion-icon>
           </ion-button>
-          <ion-button class="btn-ins" aria-label="Entrar com Instagram">
+          <ion-button class="btn-ins" aria-label="Entrar com Instagram" (click)="openInstagram()">
             <ion-icon name="logo-instagram"></ion-icon>
           </ion-button>
-          <ion-button class="btn-ph" aria-label="Entrar com telefone">
-            <ion-icon name="call-outline"></ion-icon>
+          <ion-button class="btn-yt" aria-label="Entrar com telefone" (click)="openYoutube()">
+            <ion-icon name="logo-youtube"></ion-icon>
           </ion-button>
         </div>
       </ion-card-content>
     </ion-card>
-  </div>
+  </section>
 </ion-content>

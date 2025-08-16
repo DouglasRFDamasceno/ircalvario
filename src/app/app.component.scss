@@ -30,7 +30,7 @@ ion-menu.md ion-note {
 ion-menu.md ion-list-header,
 ion-menu.md ion-note {
   padding-left: 10px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 ion-menu.md ion-list#inbox-list {
@@ -130,11 +130,12 @@ ion-item.selected {
 }
 
 ion-list-header.menu-list-header {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: linear-gradient(135deg, #0163aa, #3c90c5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
+  height: 9rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -157,19 +158,106 @@ ion-list-header.menu-list-header {
   line-height: 1.3;
   display: block;
   margin: 0 auto;
-  max-width: none; /* ou aumente, ex: 300px */
+  max-width: none;
   text-align: center;
-  padding: 0 1rem; /* espaçamento horizontal, opcional */
+  padding: 0 1rem;
 }
 
 ion-menu ion-list {
   padding-top: 0 !important;
 }
 
-/* Seus estilos para os elementos internos */
 .menu-header-icon {
   font-size: 36px;
   color: #f1c40f;
   margin-bottom: 0.5rem;
 }
 
+#logo {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+}
+
+ion-menu-button {
+  --color: #0163aa;
+  font-size: 1.7rem;
+}
+.custom-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: linear-gradient(135deg, #0163aa, #3c90c5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+#main-content {
+  margin-top: 64px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+ion-toolbar {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: transparent;
+  border-bottom: none;
+}
+
+.custom-tab-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.custom-tab-bar ion-tab-button {
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent;
+}
+
+ion-menu-button {
+  font-size: 1.8rem;
+}
+
+#logo img {
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Por padrão: desktop */
+.menu-btn {
+  display: none; /* esconde o menu em telas grandes */
+}
+
+.custom-tab-bar {
+  display: flex; /* mostra as tabs em telas grandes */
+}
+
+/* Telas pequenas (celular/tablet) */
+@media (max-width: 1024px) {
+  .menu-btn {
+    display: flex; /* mostra o ícone de menu */
+  }
+
+  .custom-tab-bar {
+    display: none; /* esconde as tabs */
+  }
+}

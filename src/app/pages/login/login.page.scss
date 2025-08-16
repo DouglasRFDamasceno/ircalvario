@@ -1,55 +1,40 @@
 ion-content {
   --background: #ebebeb;
 
-  .header-title {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
-
-  .header-subtitle {
-    font-size: 15px;
-    line-height: 1;
-    margin-top: 0;
-  }
-
   #header {
-    height: 40%;
-    background: var(--ion-color-primary);
-    // background: #7972e6;
+    background: var(--ion-color-secondary);
     border-radius: 0 0 20px 20px;
     display: flex;
     flex-direction: column;
-    color:#fff;
-    padding: 20px;
+    color: #fff;
 
-    @media screen and (max-height: 700px) {
-      height: 45%;
+    @media screen and (max-width: 600px) {
+      height: 38vh;
+      padding: 3vh;
     }
 
-    @media screen and (min-height: 800px) {
-      height: 35%;
-    }
-
-    @media screen and (min-height: 1000px) {
-      height: 30%;
+    @media screen and (min-width: 601px) {
+      height: 40vh;
+      padding: 11vh;
     }
   }
 
   #app-bar {
-    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    ion-icon {
-      font-size: 24px;
-      margin-left: -5px;
+    @media screen and (max-width: 600px) {
+      height: 20vh;
+    }
+
+    @media screen and (min-width: 601px) {
+      height: 5vh;
     }
 
     #logo {
-      width: 80px;
-      height: 80px;
+      width: 7rem;
+      height: 7rem;
       background-color: #fff;
       display: flex;
       justify-content: center;
@@ -61,33 +46,23 @@ ion-content {
         height: auto;
       }
     }
-
-
   }
 
   .wrapper {
     position: absolute;
-    top: 30%;
+    top: 25vh;
     left: 10%;
     right: 10%;
 
-    @media screen and (max-height: 700px) {
-    top: 24vh;
-    }
-
-    @media screen and (min-height: 800px) {
-      top: 20vh;
-    }
-
-    @media screen and (min-height: 1000px) {
-      top: 10vh;
+    @media screen and (max-width: 768px) {
+      top: 26vh;
     }
 
     .form-wrapper {
       background: #fff;
       box-shadow: none;
       border-radius: 20px;
-      padding: 15px 10px;
+      padding: 10px 15px;
 
       ion-item {
         --background: #e7e7e7;
@@ -108,7 +83,6 @@ ion-content {
           color: #000;
           font-size: 15px;
         }
-
       }
 
       ion-button {
@@ -143,8 +117,8 @@ ion-content {
 
     .social-wrapper {
       box-shadow: none;
-      border-radius: 20px;
       background: #fff;
+      border-radius: 10px;
 
       .socials {
         display: flex;
@@ -153,32 +127,26 @@ ion-content {
 
         ion-button {
           margin: 0 5px;
-          border-radius: 8px;
-          --padding-start: 12px;
-          --padding-end: 12px;
+          --padding-start: 8px;
+          --padding-end: 8px;
+          --border-radius: 50%;
+          height: 15px;
 
           ion-icon {
-            font-size: 20px;
+            font-size: 18px;
           }
         }
 
-        .btn-fb {
-          --background: #567aa3;
-        }
+        .btn-fb { --background: #567aa3; }
 
-        .btn-tw {
-          --background: #48cff5;
-        }
+        .btn-tw { --background: #48cff5; }
 
-        .btn-ins {
-          --background: #fd684f;
-        }
+        .btn-ins { --background: #fd684f; }
 
-        .btn-ph {
-          --background: #737373;
-        }
-       }
+        .btn-ph { --background: #737373; }
+
+        .btn-yt { --background: #ff0000; }
+      }
     }
   }
 }
-

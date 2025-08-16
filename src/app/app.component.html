@@ -1,11 +1,36 @@
 <ion-app>
   <ion-split-pane contentId="main-content" when="false">
+    <div class="custom-header">
+      <ion-toolbar>
+        <!-- Menu button -->
+        <ion-buttons slot="start" class="menu-btn">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <!-- Tab bar -->
+        <ion-tab-bar class="custom-tab-bar">
+          <ion-tab-button tab="Home" routerLink="/home">
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="WhoWeAre" routerLink="/who-we-are">
+            <ion-label>Quem somos</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="Contact" routerLink="/login">
+            <ion-label>Contato</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-toolbar>
+    </div>
+
     <ion-menu contentId="main-content" type="overlay" id="main-menu" aria-label="Menu principal">
       <ion-content>
         <ion-list role="menu" aria-labelledby="menu-header" id="inbox-list">
           <ion-list-header id="menu-header" class="menu-list-header">
-            <ion-icon name="church" slot="start" class="menu-header-icon"></ion-icon>
-            <span class="menu-header-text">Igreja Reformada do Calvário</span>
+            <div id="logo">
+              <img src="assets/imgs/logo_escrita.png" alt="Logo da aplicação" />
+            </div>
           </ion-list-header>
 
           <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages">
@@ -30,17 +55,10 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
-
-      <!-- <ion-footer>
-        <ion-toolbar>
-          <ion-button expand="block" color="danger" (click)="logout()">
-            <ion-icon slot="start" name="log-out"></ion-icon>
-            Sair
-          </ion-button>
-        </ion-toolbar>
-      </ion-footer> -->
     </ion-menu>
 
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <div class="ion-page" id="main-content">
+      <ion-router-outlet></ion-router-outlet>
+    </div>
   </ion-split-pane>
 </ion-app>

@@ -16,4 +16,19 @@ export class LoginPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
   }
 
+  teste() {
+    console.log("teste")
+  }
+
+  openYoutube() {
+    window.open('https://www.youtube.com/@igrejadocalvariosrs', '_blank');
+  }
+
+  openFacebook() {
+    window.open('https://www.facebook.com/igrejadocalvariosrs', '_blank');
+  }
+
+  openInstagram() {
+    window.open('https://www.instagram.com/igrejadocalvariosrs', '_blank');
+  }
 }

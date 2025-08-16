@@ -12,7 +12,6 @@ describe('AppComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [RouterModule.forRoot([])],
     }).compileComponents();
   });
